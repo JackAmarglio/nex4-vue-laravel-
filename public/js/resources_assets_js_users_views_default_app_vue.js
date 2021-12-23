@@ -146,10 +146,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -25622,22 +25618,34 @@ var render = function() {
           "div",
           { staticClass: "row" },
           [
-            (_vm.$route.name === "profile" ||
-            _vm.$route.name === "security" ||
-            _vm.$route.name === "payment-update" ||
-            _vm.$route.name === "billing-details" ||
-            _vm.$route.name === "change-plan" ||
-            _vm.$route.name === "language" ||
-            _vm.$route.name === "adjust-subtitles" ||
-            _vm.$route.name === "viewing-history" ||
-            _vm.$route.name === "support-inbox" ||
-            _vm.$route.name === "support-request" ||
-            _vm.$route.name === "device-activity"
-            ? true
-            : false)
-              ? _c("sidebar", {
-                  staticClass: "col-1 hidden-sm-down sidebar-content"
+            _vm.show_sidebar &&
+            (_vm.$route.name === "login" ||
+            _vm.$route.name === "forget_password" ||
+            _vm.$route.name === "payment" ||
+            _vm.$route.name === "signup" ||
+            _vm.$route.name === "contact-us" ||
+            _vm.$route.name === "plan"
+              ? false
+              : true)
+              ? _c("sidebar")
+              : _vm._e(),
+            _vm._v(" "),
+            !_vm.show_sidebar
+              ? _c("router-view", {
+                  staticClass: "col p-0 margin-left-auto",
+                  attrs: { show_sidebar: _vm.show_sidebar }
                 })
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.show_sidebar
+              ? _c("router-view", {
+                  staticClass: "col p-0 margin-left-13",
+                  attrs: { show_sidebar: _vm.show_sidebar }
+                })
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.showSearchPage
+              ? _c("search-page", { attrs: { show_sidebar: _vm.show_sidebar } })
               : _vm._e(),
             _vm._v(" "),
             _c("router-view", { staticClass: "col p-0" }),

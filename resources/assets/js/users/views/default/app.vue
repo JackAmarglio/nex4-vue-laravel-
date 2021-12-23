@@ -60,25 +60,21 @@
     <div class="col-12 grid">
       <div class="row">
         <sidebar
-          class="col-1 hidden-sm-down sidebar-content"
-          v-if="
-            $route.name === 'profile' ||
-            $route.name === 'security' ||
-            $route.name === 'payment-update' ||
-            $route.name === 'billing-details' ||
-            $route.name === 'change-plan' ||
-            $route.name === 'language' ||
-            $route.name === 'adjust-subtitles' ||
-            $route.name === 'viewing-history' ||
-            $route.name === 'support-inbox' ||
-            $route.name === 'support-request' ||
-            $route.name === 'device-activity'
-              ? true
-              : false
-          "
+          v-if="show_sidebar &&
+                         ($route.name ==='login'    ||
+                         $route.name ==='forget_password'  ||
+                         $route.name ==='payment'  ||
+                         $route.name ==='signup'  ||
+                         $route.name ==='contact-us'  ||
+                         $route.name ==='plan'? false:true)"
         ></sidebar>
 
         <!-- SideBar -->
+        <router-view :show_sidebar="show_sidebar" class="col p-0 margin-left-auto" v-if="!show_sidebar"></router-view>
+        <router-view :show_sidebar="show_sidebar" class="col p-0 margin-left-13" v-if="show_sidebar"></router-view>
+        <!-- Router view -->
+
+        <search-page v-if="showSearchPage" :show_sidebar="show_sidebar"></search-page>
 
         <router-view class="col p-0"></router-view>
 

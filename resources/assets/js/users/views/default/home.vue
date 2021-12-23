@@ -90,7 +90,7 @@
 
     <!-- END navbar -->
 
-    <div class="col-12 mt-4 p-0">
+    <!-- <div class="col-12 mt-4 p-0">
       <div class="row">
         <footer id="mainFooter">
           <div class="footer-left">
@@ -269,7 +269,7 @@
           </div>
         </footer>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
